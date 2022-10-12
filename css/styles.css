@@ -1,0 +1,569 @@
+/* Стили для ineax.html */
+
+:root {
+    --primary-text-color: #757575; 
+    --accent-color: #2196F3;
+    --accent-color-two: #FFFFFF;
+    --primary-background-color: #FFFFFF;
+    --title-text-color: #212121;
+    --section-team-color: #F5F4FA;
+    --footer-color: #2F303A;
+    --buttom-text-color: #ffffff;
+    --buttom-background-color: #2196F3;
+    --buttom-background-active-color: #188CE8;
+} 
+
+ /* --primary-text-color: #757575;      первинний-тектовий-колір(основной цвет текста)  
+ --accent-color: #2196F3;               акцент-цвет (додатковий колір на я кому робимо акцент)                 
+ --accent-color-two: #FFFFFF;           акцент-цвет (додатковий другій колір)
+ --primary-background-color: #FFFFFF;   первинний фоновий колір
+ --title-text-color: #212121;           заголовок техта колір
+ --section-team-color: #F5F4FA;         секції команда колір
+ --footer-color: #2F303A;               футера цвет
+ --buttom-text-color: #ffffff;          цвет текста кнопки
+ --buttom-background-color: #2196F3;    цвет фона кнопки*/
+ 
+
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+/* Глобальний border-box Стандартна блокова модель в сучасних проектах - це border-box.
+ Для того щоб не ставити властивість box-sizing кожному елементу окремо,
+на самому початку файлу стилів використовується наступний CSS-код. */
+
+/* body */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--primary-background-color);
+    color: var(--primary-text-color);
+    letter-spacing: 0.03em;
+}
+
+.body, a {
+    text-decoration: none;
+}
+/* Отменяем подчеркивание у ссылки */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+    padding: 0;
+    margin: 0;
+}
+/* скидаемо в нуль для зручної работи */
+
+img {
+    display: block;
+    min-width: 100%;
+    height: auto;
+}
+/* допомогае коректно відображати сайт при зменшенні екрану */
+
+/* УТІЛІТИ !!! */
+
+.list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* Этот селектор .list выключает точки в тех списках ul в класс которых мы его вставляем!  а можно выключить 
+все точки на всем сайте написавши
+ul {list-style: none;} */
+
+.container {
+    width: 1200px;
+    margin: auto;
+    padding:0 15px 0 15px;
+
+    /* border: 1px solid tomato; */
+}
+
+/* header */
+/* nav */
+
+.main-nav { 
+    display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom : 1px solid #ECECEC;
+}
+
+.logo {
+    display: block;
+    
+    padding-top: 24px;
+    padding-bottom: 25px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+}
+
+.logo-web {
+    color: var(--accent-color);
+}
+
+.logo-studio {
+    color: var(--title-text-color);
+}
+
+/* site-nav */
+
+.site-nav {
+    display: flex; 
+    padding-left: 93px;
+}
+
+.site-nav .link {
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    color: var(--title-text-color);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+}
+
+.site-nav .link:hover,
+.site-nav .link:focus {
+    color: var(--accent-color);
+}
+
+.site-nav .link.current{
+    color: var(--accent-color);
+}
+
+.site-nav .item:not(:last-child) {
+    padding-right: 40px;
+}
+
+.site-nav .link .current a {
+    color: var(--accent-color);
+}
+
+/* connecrion */
+
+.connection {
+     display: flex;
+     padding-left: 344px;
+}
+
+.connection .item:not(:last-child) {
+    padding-right: 50px;
+}
+
+/* А можно і так зробити теж буде працювати 
+
+} .connection .item + .item  {
+    margin-right: 50px;*/
+
+.connection .link {
+     
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    color: var(--primary-text-color);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+} 
+
+.connection .link:hover,
+.connection .link:focus {
+    color: var(--accent-color);
+}
+
+/* main */
+/* section-hero */
+
+.section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+   
+.section-hero { 
+    
+    color: var(--accent-color-two);
+    background-color: #2F303A;
+    text-align: center;
+    padding: 200px 0;
+}
+
+.section-hero-title { 
+
+    width: 696px;
+    height: 120px;
+    margin: 0 auto 30px auto;
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 1.36;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.buttom {
+    border: 1px solid transparent;
+    padding: 10px 32px;
+    min-width: 216px;
+    height: 50px;
+    
+    color: var(--buttom-text-color);
+    background-color: var(--buttom-background-color);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.19;
+    letter-spacing: 0.02em;
+    border-radius: 4px;
+
+    cursor: pointer;
+}
+
+.buttom:hover,
+.buttom:active {
+    background-color: var(--buttom-background-active-color);
+}
+
+/* <!--Наші переваги--> */
+/* section  */
+
+.feature {
+    padding-bottom: 0;
+}
+
+.container-feature {
+    display: flex;
+}
+
+.feature-list {
+    display: flex;    
+      
+    gap: 30px;
+}
+
+.visually-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+/* < !--Спрятали заголовок ! ! ! --> */
+
+
+/* feature */
+
+.feature-list-title {
+    color: var(--title-text-color);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin-bottom: 10px;     
+}
+
+.feature-list-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+}
+
+
+/* < !--Чим ми займаємося--> */
+ 
+.container-work {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title-work {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.17;
+    margin: auto;  
+    margin-bottom: 50px; 
+    color: var(--title-text-color);
+}
+
+.work-list  {
+    display: flex;
+    
+    gap: 30px;
+   
+}
+
+/* < !--Наша команда--> */
+
+.section-team {
+    padding-top: 94px;
+    padding-bottom: 94px;
+    background-color: var(--section-team-color);
+}
+
+.container-team {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title-team {
+    
+    font-weight: 700;
+    font-size: 36px;
+    text-align: center;
+    line-height: 1.17;
+    padding-bottom: 50px;
+    color: var(--title-text-color);
+}
+
+.team {
+    display: flex;
+    gap: 30px;
+    
+    
+    }
+
+.team-div {
+padding: 30px;
+
+}
+
+.team-img {
+    background-color: #fff;
+    border-radius: 0px 0px 4px 4px;
+}
+
+.team-name { 
+    display: flex;
+    justify-content: center;
+    
+    margin-bottom: 10px;
+    color: var(--title-text-color);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.19;
+}
+
+.team-name-text {
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.19;
+    
+    
+}
+
+/* < !--Футер--> */
+
+.footer {
+background-color: var(--footer-color);
+}
+.footer .logo {
+    padding-top: 0;
+    padding-bottom: 20px;
+    width: 145px;   
+}
+
+
+.container-footer {
+    padding: 60px 0;
+}
+
+.footer .logo-web {
+    color: var(--accent-color);
+}
+
+.footer .logo-studio {
+    color: var(--accent-color-two);
+}
+
+.footer .map-link {
+    color: var(--accent-color-two);
+}
+
+.address .link {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.map-link {
+   
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    padding-bottom: 9px;
+    }
+ 
+.address .link {
+    
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    padding-bottom: 9px;
+}
+
+.link:hover,
+.link:focus {
+    color: var(--accent-color)
+}
+
+.map-link:hover,
+.map-link:focus {
+    color: var(--accent-color)
+}
+
+/* ----------------------------------------------------------------------- */
+
+/* Стили для portfolio.html */
+
+
+
+.section-portfolio {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+
+.filter { 
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+   
+    gap: 8px;
+    
+   
+}
+
+
+.button1 { 
+    padding: 6px 25px;
+}
+
+.button2 {
+    padding: 6px 22px;
+}
+
+.button3 {
+    padding: 6px 22px;
+}
+
+.button4 {
+    padding: 6px 22px;
+}
+
+.button5 {
+    padding: 6px 22px;
+}
+
+.buttom-portfolio {
+    font-family: inherit;
+    color: #212121;
+    background-color: #F5F4FA;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.62;
+    letter-spacing: 0.03em;
+    border: none;
+    border-radius: 4px;
+    
+    cursor: pointer;
+}
+
+.buttom-portfolio:hover, 
+.buttom-portfolio:focus {
+    color: var(--buttom-text-color);
+    background-color: var(--buttom-background-color);
+}
+
+.filter-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+
+/* ще є третій варіант метод calc так и сделал */
+/* calc((100% - сумма маржинов в строке(или кол-во маржинов в строке помноженое на значение маржина в px)) / на количество елементов в строке*/
+.filter-card {
+    /* width: 370px; */
+    width: calc((100% - 60px) / 3);
+    margin-right: 30px;
+    margin-bottom: 30px;
+    background: var(--accent-color-two);
+
+   
+   
+}
+
+.filter-card:nth-child(3n) {
+  margin-right: 0;
+}
+
+.filter-card:nth-last-child(-n + 3)
+ {
+     margin-bottom: 0;
+}
+
+/* а можно ще так зробити теж саме дати марджин-30 всім кроме 3го*/
+
+/* .filter-card:not(:nth-child(3n)) {
+    margin-right: 30px;
+}  */
+
+/* а можно ще так зробити знижніми трьома */
+
+/* .filter-card:not(:nth-last-child(-n + 3)) {
+    margin-bottom: 30px;
+} */
+
+.filter-card:hover,
+.filter-card:focus {
+    background-color: var(--primary-background-color);
+}
+
+.filter-card-div {
+    padding: 20px 24px;
+    border: 1px solid #EEEEEE;
+    border-top: none;
+}
+
+.section-title-portfolio {
+    margin-bottom: 4px;
+    color: var(--title-text-color);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+}
+
+.section-title-portfolio-text {
+    color: var(--primary-text-color);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.9;
+    letter-spacing: 0.03em;
+  }
+
+/* продолжаем */
+/* на проверку ДЗ-3 */
+
+
+
