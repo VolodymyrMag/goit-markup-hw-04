@@ -71,6 +71,11 @@ img {
 
 /* УТІЛІТИ !!! */
 
+header {
+    border-bottom: 1px solid #ECECEC;
+}
+       
+
 .list {
     padding: 0;
     margin: 0;
@@ -92,16 +97,21 @@ ul {list-style: none;} */
 /* header */
 /* nav */
 
+.container-header {
+    display: flex;
+     justify-content: space-between;
+}
+
 .main-nav { 
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom : 1px solid #ECECEC;
+    
 }
 
 .logo {
     padding-top: 24px;
-    padding-bottom: 25px;
+    padding-bottom: 24px;
     font-family: "Raleway", sans-serif;
     font-weight: 700;
     font-size: 26px;
@@ -121,7 +131,7 @@ ul {list-style: none;} */
 
 .site-nav {
     display: flex; 
-    padding-left: 93px;
+    margin-left: 93px;
 }
 
 .site-nav .link {
@@ -156,11 +166,8 @@ ul {list-style: none;} */
 
 .connection {
     display: flex;
-    padding-left: 318px;
-
+    /* margin-left: 318px; */
 }
-
-
 
 .connection .item:not(:last-child) {
     padding-right: 30px;
@@ -194,14 +201,15 @@ fill: var(--primary-text-color);
     margin-right: 50px;*/
 
 .link-icon {
-    
+    margin-right: 10px;
 }
 
 .connection .link {
+    display: flex;
+    align-items: center;
     padding-top: 32px;
-    padding-left: 10px;
     padding-bottom: 32px;
-
+   
     color: var(--primary-text-color);
     font-weight: 500;
     font-size: 14px;
@@ -211,9 +219,12 @@ fill: var(--primary-text-color);
 
 .connection .link:hover,
 .connection .link:focus {
-    color: var(--accent-color);
+    fill: var(--accent-color);
 }
 
+.link:focus .link-icon {
+    fill: var(--accent-color);
+}
 
 /* -------------------------------------------------------------------------------------------------------------------- */
                                                             /* main */
@@ -273,23 +284,20 @@ fill: var(--primary-text-color);
 .buttom:active {
     background-color: var(--buttom-background-active-color);
 }
+
+.buttom:focus {
+    background-color: var(--buttom-background-active-color);    
+}
 /* ------------------------------------------------------------------- */
 
-/* <!--Наші переваги--> */
-
-/* section  */
+/* <!--Наші переваги--> */ /* feature */
 
 .feature {
     padding-bottom: 0;
 }
 
-.container-feature {
-    display: flex;
-}
-
 .feature-list {
     display: flex;    
-      
     gap: 30px;
 }
 
@@ -306,16 +314,15 @@ fill: var(--primary-text-color);
     margin: -1px;
 }
 
-/* -------------------------------------------------------------------- */
 
-/* feature */
+
+/* Вариант как можно сделать картинки еще через ::before
 
 .container-list::before {
     content: "";
     display: block;
     height: 120px;
     margin-bottom: 30px;
-    background-image: url(../images/antenna-1.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -336,6 +343,11 @@ fill: var(--primary-text-color);
 
 .icon-kosm::before {
         background-image: url(../images/group-4.svg);
+} */
+
+.img-group {
+    background: #F5F4FA;
+    border-radius: 4px;
 }
 
 .feature-list-title {
@@ -345,6 +357,7 @@ fill: var(--primary-text-color);
     line-height: 1.14;
     letter-spacing: 0.03em;
     text-transform: uppercase;
+    margin-top: 30px;
     margin-bottom: 10px;     
 }
 
@@ -460,7 +473,8 @@ padding: 30px 30px 0px 30px;
     fill: white;
 }
 
-.soc-link:hover {
+.soc-link:hover,
+.soc-link:focus {
     background-color: #2196F3; 
 }
 
@@ -468,6 +482,9 @@ padding: 30px 30px 0px 30px;
     fill: white;
 }
 
+.soc-link:focus .net-icon {
+    fill: white;
+}
 
 .net-icon {
      fill: var(--icon-color) ;
@@ -502,19 +519,32 @@ padding: 30px 30px 0px 30px;
 }
 
 .clients-item {
-    border: 1px solid #AFB1B8;
-    border-radius: 4px;
+    
+}
+ 
+.clients-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 170px;
     height: 92px;
-}
-
-.clients-icon {
+    border: 1px solid #AFB1B8;
+    border-radius: 4px;
+    
     fill: var(--icon-color);
     padding: 16px 32px;
 }
 
-.clients-item:hover .clients-icon,
-.clients-item:active {
+.clients-buttom {}
+
+.clients-buttom:hover .clients-icon,
+.clients-buttom:active {
+    fill: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    cursor: pointer;
+}
+
+.clients-buttom:focus .clients-icon {
     fill: var(--accent-color);
     border: 1px solid var(--accent-color);
     cursor: pointer;
@@ -525,29 +555,33 @@ padding: 30px 30px 0px 30px;
                                                 /* < !--Футер--> */
 
 .footer {
+    padding: 60px 0;
     background-color: var(--footer-color);
 }
 
 .footer-container-all {
     display: flex;
-    justify-items: center;
+    align-items: baseline;
 }
 
-.footer .logo {
+.info-footer {
+    margin-right: 70px;
+}
+   
+.footer-logo {
+    display: block;
     padding-top: 0;
-    padding-bottom: 20px;
     width: 145px;   
-}
-
-
-.container-footer {
-    align-items: center;
-    padding: 60px 0;
+    margin-bottom: 20px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
 }
 
 .footer .logo-web {
     color: var(--accent-color);
-    margin-bottom: 20px;
 }
 
 .footer .logo-studio {
@@ -562,13 +596,17 @@ padding: 30px 30px 0px 30px;
     color: rgba(255, 255, 255, 0.6);
 }
 
+.address-all li:not(:last-child) {
+    margin-bottom: 9px;
+}
+
 .map-link {
    
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.71;
-    padding-bottom: 9px;
+   
     }
  
 .address .link {
@@ -577,7 +615,6 @@ padding: 30px 30px 0px 30px;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.71;
-    padding-bottom: 9px;
 }
 
 .link:hover,
@@ -606,12 +643,6 @@ padding: 30px 30px 0px 30px;
     color: #FFFFFF;
 }
 
-.join-footer {
-    padding-top: 72px;
-    padding-left: 70px;
-    padding-bottom: 100px;
-}
-
 .footer-soc-list {
     display: flex;
     justify-content: center;
@@ -629,18 +660,23 @@ padding: 30px 30px 0px 30px;
     border-radius: 50%;
 }
 
-.footer-net-icon:hover {
+.footer-net-icon:hover,
+.footer-net-icon:focus
+{
     fill: white;
 }
 
-.footer-soc-link:hover {
+.footer-soc-link:hover,
+.footer-soc-link:focus
+ {
     background-color: #2196F3;
 }
 
-.footer-soc-link:hover .net-icon {
+.footer-soc-link:hover .net-icon, 
+.footer-soc-link:focus
+{
     fill: white;
 }
-
 
 .footer-net-icon {
     fill: var(--icon-color-two);
@@ -726,7 +762,7 @@ padding: 30px 30px 0px 30px;
     margin-right: 30px;
     margin-bottom: 30px;
     background: var(--accent-color-two);
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+   
   
 }
 
@@ -754,7 +790,17 @@ padding: 30px 30px 0px 30px;
 .filter-card:hover,
 .filter-card:focus {
     background-color: var(--primary-background-color);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+
+.filter-card:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.link-portfolio:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 
 .filter-card-div {
     padding: 20px 24px;
