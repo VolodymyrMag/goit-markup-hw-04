@@ -347,7 +347,7 @@ fill: var(--primary-text-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    width: calc((100% - 90px) / );
+    width: calc((100% - 90px) / 3 );
     
     height: 120px; 
     background: var(--section-team-color);
