@@ -347,18 +347,15 @@ fill: var(--primary-text-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    width: calc((100% - 90px) / 3 );
-    
+    width: calc((100% - 90px) - 5);
     height: 120px; 
     background: var(--section-team-color);
     border-radius: 4px;
  }
 
 .img-group {
-
     background: var(--section-team-color);
     border-radius: 4px;
-   
 }
 
 .feature-list-title {
