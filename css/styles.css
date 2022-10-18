@@ -348,12 +348,13 @@ fill: var(--primary-text-color);
     justify-content: center;
     align-items: center;
     width: calc((100% - 90px) - 5);
-    height: 120px; 
+    height: 120px;
     background: var(--section-team-color);
     border-radius: 4px;
  }
 
 .img-group {
+    
     background: var(--section-team-color);
     border-radius: 4px;
 }
@@ -523,7 +524,7 @@ padding: 30px 30px 0px 30px;
 .clients-list {
     display: flex;
     justify-content: space-between;
-    gap: 30px;
+    
 }
 /* LI */
 .clients-item {
